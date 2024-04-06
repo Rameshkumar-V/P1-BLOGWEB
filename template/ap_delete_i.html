@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+</head>
+<body>
+    <header>
+        <h2>Admin Panel</h2>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="/uploaddoc"> Document</a></li>
+                <li><a href="/docdelete" id="document-nav">Delete</a></li>
+                <li><a href="/docdelete">Reviews
+                </a></li>
+            </ul>        
+        </nav>
+
+        <div id="tcontainer">
+            <!-- Add search bar -->
+            <input type="text" id="searchInput" placeholder="Search by file name">
+
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>DOC ID</th>
+                        <th>File Name</th>
+                        <th>Delete Button</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for doc in document_details %}
+                        <tr>
+                            <td class="docid" name="docid">{{doc.document_id}}</td>
+                            <td class="titles" name="file1">{{doc.document_name}}</td>
+                            <td class="dbut"><button class="delete">Delete</button></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        const documents = document.querySelectorAll(".delete");
+
+        documents.forEach(function(but) {
+            but.addEventListener('click', function() {
+                var document_id = this.parentNode.parentNode.querySelector('td[name]').textContent;
+                console.log(document_id);
+
+                if (confirm("Are you sure you want to delete this file?")) {
+                    fetch(`/deldoc?docid=${document_id}`, {
+                        method: 'POST'
+                    }).then(response => response.json())
+                    .then(data => {
+                        console.log(data.result);
+                        //alert("Data received");
+                        alert(data.result);
+                    })
+                    .catch(error => {
+                        alert("Error");
+                    });
+                }
+            });
+        });
+
+        // Add search functionality
+        const searchInput = document.getElementById('searchInput');
+        const titles = document.querySelectorAll('.titles');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+
+            titles.forEach(title => {
+                const titleText = title.textContent.toLowerCase();
+                const row = title.parentNode;
+
+                if (titleText.includes(searchTerm)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

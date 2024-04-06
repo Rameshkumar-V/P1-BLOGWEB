@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style2.css') }}">
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+    <header>
+        <h2>Admin Panel</h2>
+    </header>
+
+    <main>
+        <nav>
+            <ul>
+                <li><a href="/uploaddoc" id="document-nav">UPLOAD</a></li>
+                <li><a href="/docdelete">DELETE</a></li>
+                <li><a href="/docdelete">Reviews
+                </a></li>
+            </ul>
+        </nav>
+
+        <div id="container">
+            <br>
+            <form action="/upldoc" method="POST" enctype="multipart/form-data">
+
+                <label>Drag or Select a File</label>
+                <br>
+
+                <button>
+                    <input type="file" name="document" id="document" accept=".pdf, .ppt, .pptx" required>
+                </button>
+
+                <br>
+                <!--
+
+                <label>Select Image</label>
+                 <br>
+                <button>
+                    <input type="file" name="image" value="Select Image" accept="image/*" required>
+                </button>-->
+
+                <br>
+                <label>Select Type</label>
+                 <br>
+
+                <select name="section">
+                    <option>PUBLICATION</option>
+                    <option>RESOURCES</option>
+                    <option >PROFESSIONAL</option>
+                    <option>ENGTIPS</option>
+                </select>
+
+                <br>
+
+                <button id="uploadbtn" type="button" onclick="server()">Upload Document</button>
+
+                <div id="progress-container">
+                    <div id="progress-bar">0%</div>
+                </div>
+
+            </form>
+        </div>
+    </main>
+    {% else %}
+    <h4>Notttttt</h4>
+    {% endif %}
+
+   
+    <script type="text/javascript">
+        console.log("new one this ");
+        function server() {
+            var form = document.querySelector('form');
+            var formData = new FormData(form);
+            form.reset(); // Reset the form after successful upload
+    
+            var progressBar = document.getElementById('progress-bar');
+            var progressContainer = document.getElementById('progress-container');
+    
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/upldoc', true);
+    
+            xhr.upload.onprogress = function(event) {
+                if (event.lengthComputable) {
+                    var percentCompleted = Math.round((event.loaded / event.total) * 100);
+                    progressBar.style.width = percentCompleted + '%';
+                    progressBar.innerHTML = percentCompleted + '%';
+                }
+            };
+    
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    console.log(data);
+                    window.alert(data.result);
+                } else {
+                    console.error("Error:", xhr.statusText);
+                    window.alert("Upload failed. Please try again.");
+                }
+                progressContainer.style.display = 'none';
+            };
+    
+            xhr.onerror = function() {
+                console.error("Request failed");
+                window.alert("Upload failed. Please try again.");
+                progressContainer.style.display = 'none';
+            };
+    
+            // Display progress bar during upload
+            progressContainer.style.display = 'block';
+            xhr.send(formData);
+        }
+    </script>
+</body>
+</html>

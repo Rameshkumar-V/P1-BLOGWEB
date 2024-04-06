@@ -1,0 +1,169 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+
+        font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+header {
+    height: 10%;
+    width: 100vw;
+    text-align: center;
+    background: #1e81b0;
+    color: whitesmoke;
+    padding: 10px;
+    font-variant: small-caps;
+    font-size: 3rem;
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+
+ 
+}
+
+nav {
+    height: 100%;
+    width: 20%;
+    padding: 1%;
+    background: #1e81b0;
+}
+
+
+div {
+    height: 100%;
+    width: 100%;
+
+}
+
+ul li {
+    list-style: none;
+    padding: 20%;
+}
+
+a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: lighter;
+    color:antiquewhite;
+}
+
+div p{
+    height: 50%;
+    width: 90%;
+    text-align: justify;
+    padding: 10px 20px;
+    overflow-y: scroll;
+}
+div h4{
+    width: 80%;
+    text-align: justify;
+    padding: 10px 20px;
+
+}
+
+.user{
+    position: relative;
+   background-color: antiquewhite;
+    height: 200px;
+    font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+border: solid 1px;
+padding: 2px;
+margin: 2px;
+}
+
+
+.user a{
+    font-size: 1.4rem;
+    color:floralwhite;
+    background: transparent;
+    border-radius: 10px;
+    height: 30px;
+    width: 100px;
+    font-family: 'Open Sans', sans-serif;
+font-family: 'Roboto', sans-serif;
+border: none;
+
+
+
+}
+
+.deletebtn{
+        background-color: green;
+
+}
+
+div button{
+    margin: 0px  8px;
+    border-radius: 8px;
+    height: 30px;
+    width: 100px;
+        background-color: crimson;
+
+
+}
+
+#tcontainer{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Media queries for responsive design */
+
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding:0;
+    }
+
+    nav {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+     ul li {
+        padding: 10px;
+        display:inline-block;
+
+
+    }
+    a{
+        background-color: transparent;
+        color: navajowhite;
+    }
+
+
+ 
+
+
+
+}

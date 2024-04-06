@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/emailpage.css') }}">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <h2>Admin Panel</h2>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li><a href="/uploaddoc"> Document</a></li>
+                <li><a href="/docdelete" id="document-nav">Delete</a></li>
+                <li><a href="/docdelete">Reviews
+                </a></li>
+            </ul>        
+        </nav>
+
+        <div id="tcontainer">
+
+        {%for data in result %}
+            <div class="user">
+                <h4>{{data.emailid}}</h4>
+                <p>{{data.message}}</p>
+                <button><a  onclick="deleteEmail({{ data.id }})">Delete</a>  </button>
+
+                <button class="deletebtn"><a href="{{ url_for('compose_email', emailid=data.emailid) }}" target="_blank">
+    <i class="fa-regular fa-envelope"></i>Contact
+</a>
+</button>
+                
+            </div>
+        {% endfor %}
+        </div>
+    </main>
+
+</body>
+    <script>
+        async function deleteEmail(emailId) {
+            try {
+                const response = await fetch(`/emaildelete/${emailId}`, {
+                    method: 'POST',
+                }).then(response=>response.json()).then(data=>{
+                    window.alert(data.result);
+                    // Reload the current page
+                    window.location.reload();
+
+                });
+
+                if (response.status === 200) {
+                    // The delete operation was successful, you might want to update the UI accordingly
+                    console.log('Email deleted successfully');
+                    window.location.reload();
+
+                } else {
+                    // Handle the case where the delete operation failed
+                    console.error('Failed to delete email');
+                }
+            } catch (error) {
+                // Handle network or other errors
+                console.error('Error during delete operation:', error);
+            }
+        }
+    </script>
+</html>

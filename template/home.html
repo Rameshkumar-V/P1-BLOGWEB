@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tamilmani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/css/home.css" />
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  </head>
+  <body>
+    <!--header-->
+    <div class="header">
+      <div class="title" id="Title">Tamilmani</div>
+      <div class="nav">
+        <ul>
+          <p class="bars">
+            <a href=""><i class="fa-solid fa-bars"></i></a>
+          </p>
+          <li><a href="#Title">Home</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Contact">Contact</a></li>
+          <li><a href="#Resource">Resources</a></li>
+        </ul>
+      </div>
+    </div>
+    <!--start-->
+    <div class="start">
+      <div class="profile">
+        <div class="icons">
+          <a href="#Contact"><i class="fa-brands fa-linkedin-in"></i></a><br />
+          <a href="#Contact"><i class="fa-regular fa-envelope"></i></a><br />
+          <a href="#Contact"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+        <div class="photo">
+          <img
+            src= "{{ url_for('static', filename='/img/WhatsApp_Image_2023-12-26_at_1.36.18_PM-removebg-preview.png') }}""
+            alt=""
+            width="300"
+            height="325"
+          />
+        </div>
+      </div>
+      <div class="abt">
+        <div class="abt1">
+          <h2>Hi, I am Tamilmani</h2>
+          <h4>Vice principal of NMC</h4>
+          <p>Passionate English Professor and mentor!</p>
+          <button class="btn">
+            <a href="#Contact"
+              >Contact me <i class="fa-regular fa-envelope"></i
+            ></a>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--about-->
+    <div class="abthead" id="About">
+      <h2>About me</h2>
+      <p>My introduction</p>
+    </div>
+    <div class="about">
+      <div class="abtphoto">
+        <img src= "{{ url_for('static', filename='/img/adoutimg.png') }}" alt="" width="300" height="200" />
+      </div>
+      <div class="abtpara">
+        <p>
+                    Dr Tamilmani K T is an Associate Professor & Head, Dept of English and
+          Vice-Principal at Nehru Memorial College in Puthanampatti,
+          Tiruchirappalli, affiliated to Bharathidasan University, Tamil Nadu,
+          India. He has completed 29 years of collegiate service. His research
+          interests include American Literature and English Language Teaching.
+          He completed a UGC funded minor research project titled “Developing
+          Effective Strategies for Enriching the Word Power of the
+          First-Generation Rural Learners.” He has published 30 research papers
+          in reputed journals. He has served as a resource person for a number
+          of academic programs in UGC-Human Resource Development Centre of
+          Bharathidasan University.
+        </p>
+        <div class="num">
+          <div class="more">
+            <div class="num1">
+              <h3>27+</h3>
+              <p>experience     </p>
+            </div>
+            <div class="num1">
+              <h3>40+</h3>
+              <p>publications    </p>
+            </div>
+            <div class="num1">
+              <h3>2+</h3>
+              <p>Awards    </p>
+            </div>
+          </div>
+          <button class="more-profile"><a href="/about">More</a></button>
+        </div>
+      </div>
+    </div>
+    <!--guides-->
+    <div class="resourcehead" id="Resource">
+      <h2>Resources</h2>
+    </div>
+    <div class="resource">
+      <div class="resource1 professionalact">
+        <div class="icon1"><i class="fa-solid fa-user"></i></div>
+        <div class="re1">Professional acts</div>
+        <p>
+          As i am a experienced professor I did lot of talks and lectures
+          &nbsp;&nbsp;&nbsp;
+          <span
+            ><a href="/professionalacts"
+              ><i class="fa-solid fa-arrow-right"></i></a
+          ></span>
+        </p>
+      </div>
+      <div class="resource1 learningresource">
+        <div class="icon1"><i class="fa-solid fa-book-open-reader"></i></div>
+        <div class="re1">Learning resources</div>
+        <p>
+          Here you can get lot of learning PDFs in English &nbsp;&nbsp;&nbsp;
+          <span
+            ><a href="/learningresources"
+              ><i class="fa-solid fa-arrow-right"></i></a
+          ></span>
+        </p>
+      </div>
+    </div>
+    <div class="resource">
+      <div class="resource1 englishtips">
+        <div class="icon1"><i class="fa-solid fa-gears"></i></div>
+        <div class="re1">English tips</div>
+        <p>
+          Here you can get easy tips in English language &nbsp;&nbsp;&nbsp;
+          <span
+            ><a href="/englishtips"
+              ><i class="fa-solid fa-arrow-right"></i></a
+          ></span>
+        </p>
+      </div>
+      <div class="resource1 publishedpapers">
+        <div class="icon1"><i class="fa-solid fa-pen"></i></div>
+        <div class="re1">Publications</div>
+        <p>
+          I published more than 40 research papers.click to see them &nbsp;
+          &nbsp; &nbsp; &nbsp;
+          <span
+            ><a href="/publications"
+              ><i class="fa-solid fa-arrow-right"></i></a
+          ></span>
+        </p>
+      </div>
+    </div>
+    <!--contact-->
+    <div class="contacthead" id="Contact">
+      <h2>Contact me</h2>
+      <p>Get in touch</p>
+    </div>
+    <div class="contact">
+      <h3>We are Here to help you, every step on the way</h3>
+      <div class="contact1">
+        <div class="socialmedia">
+          <div class="socialicons">
+            
+            <i class="fa-regular fa-envelope"></i><br />
+            <i class="fa-brands fa-linkedin-in"></i><br>
+            <i class="fa-brands fa-youtube"></i>
+          </div>
+          <div class="socialid">
+            <p>kttmanieng8@gmail.com</p>
+            <p class="linkedin-profile">
+              <a href="https://www.linkedin.com/in/tamilmani-k-t-98189517/"
+                >tamilmani-k-t-98189517
+              </a>
+            </p>
+            <p class="utube-link"><a href="https://www.youtube.com/@drtamilmanikt1917">drtamilmanikt1917</a></p>
+          </div>
+        </div>
+        <div class="msg">
+          <p>Sent me a message</p>
+          <div class="name">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" placeholder="Name" />
+          </div>
+          <div class="e-mail">
+            <i class="fa-regular fa-envelope"></i>
+            <input type="text" placeholder="E-mail addrress" />
+          </div>
+          <div class="text">
+            <p>Message</p>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <br />
+          </div>
+          <button>Sent</button>
+        </div>
+      </div>
+    </div>
+    <script src="/js/home.js"></script>
+  </body>
+</html>

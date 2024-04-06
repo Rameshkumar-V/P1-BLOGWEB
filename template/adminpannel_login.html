@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Pannel </title>
+
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <h4>Admin Pannel</h4>
+
+        </nav>
+    </header>
+
+    <main>
+        <form action="/login" method="post">
+            <div class="label">
+            <label for="username">Enter Username</label>
+            <input type="text" name="username">
+            </div>
+
+            <br>
+
+            <div class="label">
+            <label for="password">Enter Password</label>
+            <input type="text" name="password">
+            </div>
+
+            <div class="buttons">
+                <input type="submit" value="Submit" class="button">
+                <input type="reset" value="Clear" class="button">
+            </div>
+        </form>
+    </main>
+
+    
+</body>
+</html>

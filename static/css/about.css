@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
+}
+body {
+  background-color: #ffffffff;
+}
+.header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  padding-top: 10px;
+}
+.logo {
+  width: 100%;
+  height: 100%;
+  font-size: 1.5rem;
+  font-weight: 530;
+  color: #171a1fff;
+  font-family: "poppins";
+}
+.navbar nav {
+  display: flex;
+}
+nav a {
+  padding: 0 10px;
+  text-decoration: none;
+  color: rgb(81, 93, 116);
+  font-weight: 550;
+  font-size: 1rem;
+}
+.subs {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(53, 107, 255);
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 2px;
+}
+.container {
+  width: 70%;
+  height: 100%;
+  align-items: center;
+  margin: 50px 15%;
+}
+.profile-start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+.container h3{
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+}
+.back{
+  display: none;
+}
+/*media queries*/
+@media only screen and (max-width: 600px){
+ nav a{
+  display: none;
+ }
+ .subs{
+  font-weight: 500;
+ }
+ .back{
+  width: 100%;
+  height: 100%;
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(243, 243, 243);
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 20px;
+ }
+}

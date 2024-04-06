@@ -1,0 +1,388 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins" sans-serif;
+}
+/*header*/
+.header {
+  width: 80%;
+  height: 100%;
+  font-family: "Poppins";
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 10%;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+li {
+  padding: 0 20px;
+}
+li a {
+  text-decoration: none;
+}
+li a:hover {
+  cursor: pointer;
+  color: hsl(250, 69%, 61%, 1);
+}
+.bars {
+  display: none;
+}
+/*start*/
+
+.start {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  margin: 100px 10%;
+  flex-basis: 50%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 200px;
+}
+.profile {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.abt h2,
+h4,
+p {
+  font-family: "Poppins";
+}
+.abt h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(32, 32, 32);
+}
+.icons i {
+  font-size: 20px;
+  color: hsl(250, 69%, 61%, 1);
+}
+.abt button {
+  width: 150px;
+  height: 40px;
+  background: hsl(250, 69%, 61%, 1);
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 30px;
+}
+.abt h4 {
+  font-weight: 500;
+  color: rgb(68, 68, 68);
+}
+.icons i {
+  margin: 15px 0;
+}
+.icons i,
+.btn :hover {
+  cursor: pointer;
+}
+.btn a {
+  text-decoration: none;
+  color: white;
+}
+/*about*/
+.abthead {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  text-align: center;
+  font-family: "Poppins";
+}
+.abthead h2 {
+  font-weight: 600;
+  color: rgb(22, 22, 22);
+}
+.about {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  font-family: "Poppins";
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(114, 114, 114);
+  flex-basis: 50%;
+  margin: 50px 10%;
+  align-items: center;
+  justify-content: center;
+}
+.abtphoto{
+  height:100%;
+}
+.abtpara {
+  width: 50%;
+}
+.abtpara p {
+  text-align: justify;
+}
+.num {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.more {
+  display: flex;
+}
+.num .num1{
+  margin: 20px;
+}
+.num .num1 h3 {
+
+
+  color: hsl(250, 69%, 61%, 1);
+}
+.num button {
+  width: 100px;
+  height: 40px;
+  background-color: hsl(250, 69%, 61%, 1);
+  border: none;
+  outline: none;
+  color: white;
+  font-family: "Poppins";
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.more-profile a{
+  text-decoration: none;
+  color: white;
+}
+/*resource*/
+.resourcehead {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+  font-family: "Poppins";
+  font-weight: 550;
+  color: rgb(22, 22, 22);
+}
+.resource {
+  font-family: "Poppins";
+  width: 70%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 100px 15%;
+}
+.resource1 {
+  width: 40%;
+  height: 100%;
+  box-shadow: 0px 0px 4px 0px rgba(156, 156, 156, 1);
+  padding: 30px 30px;
+  background: hsl(250, 69%, 61%, 1);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.re1 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.resource1 p {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.resource1 a{
+  text-decoration: none;
+  color: white;
+}
+.icon1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  margin: 20px 0;
+}
+/*contact*/
+.contacthead {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  font-family: "Poppins";
+  margin: 30px 0;
+}
+.contact {
+  width: 80%;
+  height: 100%;
+  margin: 50px 10%;
+  border: 3px solid hsl(250, 69%, 61%, 1);
+  border-radius: 25px;
+  font-family: "Poppins";
+  padding: 50px 50px;
+  background: hsl(250, 69%, 61%, 1);
+  color: white;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.utube-link a{
+  text-decoration: none;
+  color: white;
+}
+.contact h3 {
+  font-weight: 500;
+  text-align: center;
+  padding-bottom: 20px;
+}
+.contact1 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  padding:20px;
+
+
+}
+.socialmedia {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.socialicons,
+.socialid {
+  padding: 15px;
+}
+.name,
+.e-mail {
+  width: 200px;
+  height: 25px;
+  border-radius: 5px;
+  background: white;
+  color: grey;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  padding-left: 10px;
+  align-items: center;
+  padding-top: 5px;
+}
+.name input,
+.e-mail input {
+  border: none;
+  outline: none;
+}
+.text {
+  width: 200px;
+  height: 120px;
+  overflow: hidden;
+  border-radius: 5px;
+  background: white;
+  color: grey;
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+.text textarea {
+  outline: none;
+  border: none;
+  height: 80px;
+}
+.msg button {
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  background: white;
+  color: grey;
+  outline: none;
+  border: none;
+  font-family: "Poppins";
+  font-size: 1rem;
+  font-weight: 500;
+  margin-top: 20px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.linkedin-profile a{
+  text-decoration: none;
+  color: white;
+}
+/*media query*/
+@media only screen and (max-width: 768px) {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .header ul {
+    display: none;
+  }
+  .start {
+    display: block;
+  }
+  .abt {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .profile img {
+    width: 200px;
+    height: 220px;
+  }
+  .about {
+    display: block;
+  }
+  .abtpara {
+    width: 100%;
+    height: 100%;
+    display: inline;
+  }
+  .num {
+    display: inline;
+  }
+  .num1 {
+    padding: 20px 10px;
+  }
+  .resource {
+    display: inline;
+  }
+  .resource1 {
+    width: 70%;
+    margin: 0 15%;
+  }
+  .professionalact,.englishtips{
+    margin-bottom: 25px;
+  }
+  .contact1{
+      display:inline;
+
+
+
+
+  }
+  .msg{
+      width:100%;
+
+  }
+  .msg .name,.e-mail,.text{
+      height:60px;
+      width:100%;
+  }
+
+}
