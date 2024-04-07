@@ -121,7 +121,7 @@ def get_document_details(document_type):
 def get_document_detailsx(document_type, document_id):
     try:
         # Assuming Documents is your SQLAlchemy model
-        documents = Documents.query.filter_by(dtype=document_type).order_by(Documents.id).offset(document_id).limit(10).all()
+        documents = Documents.query.filter_by(dtype=document_type).order_by(Documents.id).offset(document_id).limit(2).all()
 
         if documents:
             # Create a list to store the details of each document
