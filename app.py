@@ -74,7 +74,7 @@ def Profession_acts():
 @app.route('/learningresources')
 
 def Learning_Resources():
-    document_details=get_document_details("RESOURCES")
+    document_details=get_document_detailsx("RESOURCES",0)
     if document_details:
         return render_template("learningresource.html",document_details=document_details)
     else:
@@ -84,7 +84,7 @@ def Learning_Resources():
 # 5 ENGLISH ESSAY
 @app.route('/englishtips')
 def Essay():
-    document_details=get_document_details("ENGTIPS")
+    document_details=get_document_detailsx("ENGTIPS",0)
     if document_details:
         return render_template("englishtips.html",document_details=document_details)
     else:
@@ -96,7 +96,7 @@ def Essay():
 # 6 PUBLICATION
 @app.route('/publications')
 def Publication():
-    document_details=get_document_details("PUBLICATION")
+    document_details=get_document_detailsx("PUBLICATION",0)
     if document_details:
         return render_template("Publications.html",document_details=document_details)
     else:
