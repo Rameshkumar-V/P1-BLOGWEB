@@ -123,7 +123,7 @@ def get_document_details(document_type):
 def get_document_detailsx(document_type, document_id):
     try:
         # Assuming Documents is your SQLAlchemy model
-        documents = Documents.query.filter_by(dtype=document_type).order_by(Documents.id).offset(document_id).limit(10).all()
+        documents = Documents.query.filter_by(dtype=document_type).order_by(Documents.id).offset(document_id).limit(2).all()
 
         if documents:
             # Create a list to store the details of each document
@@ -142,7 +142,6 @@ def get_document_detailsx(document_type, document_id):
             return None
 
     except Exception as e:
-        # Handle exceptions gracefully
         return f"DOCUMENT ERROR FACED, ERROR TYPE: {type(e)}, ERROR: {e}."
 
 
@@ -152,11 +151,9 @@ def get_document_details_all():
         documents = Documents.query.all()
 
         if documents:
-            # Create a list to store the details of each document
             document_details = []
             
             for document in documents:
-                # Append a dictionary with required details to the list
                 document_details.append({
                     'document_id': document.id,
                     'document_name': document.dname
@@ -164,11 +161,9 @@ def get_document_details_all():
 
             return document_details
         else:
-            #print(f"No documents found for type: {document_type}")
             return None
 
     except Exception as e:
-        #print("ERROR ON GET DOCUMENT DETAILS")
         return f"DOCUMENT ERROR FACED, ERROR TYPE: {type(e)}, ERROR: {e}."
 
 
@@ -210,7 +205,6 @@ def email_data_db_allget():
             document_details = []
             
             for document in documents:
-                # Append a dictionary with required details to the list
                 document_details.append({
                     'id': document.id,
                     'emailid': document.emailid,
@@ -218,7 +212,7 @@ def email_data_db_allget():
                 })
             return document_details
         else:
-            return 8  # This might be a placeholder, adjust it accordingly
+            return 'NO DOCUMENTS FOUND !'
     except Exception as e:
         return f"{type(e).__name__}"
 

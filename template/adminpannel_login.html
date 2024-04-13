@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Pannel </title>
-
-
+    <title>Admin Panel</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <header>
         <nav>
-            <h4>Admin Pannel</h4>
-
+            <h1>Admin Panel</h1>
         </nav>
     </header>
 
     <main>
-        <form action="/login" method="post">
-            <div class="label">
-            <label for="username">Enter Username</label>
-            <input type="text" name="username">
+        <form action="/login" method="post" class="login-form">
+            <div class="input-group">
+                <label for="username">Enter Username:</label>
+                <input type="text" name="username" id="username" placeholder="Username">
             </div>
 
-            <br>
-
-            <div class="label">
-            <label for="password">Enter Password</label>
-            <input type="text" name="password">
+            <div class="input-group">
+                <label for="password">Enter Password:</label>
+                <input type="password" name="password" id="password" placeholder="Password">
             </div>
 
             <div class="buttons">
@@ -36,7 +31,5 @@
             </div>
         </form>
     </main>
-
-    
 </body>
 </html>

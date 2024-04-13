@@ -4,6 +4,7 @@ mysql
 mysqlclient
 Flask-Login
 Flask-SQLAlchemy
+gunicorn
 
 
 

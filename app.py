@@ -344,17 +344,32 @@ def compose_email(emailid):
     return redirect(f"https://mail.google.com/mail/?view=cm&fs=1&to={emailid}&su={subject}&body={body}")
 
 
-
+"""
 @app.route('/upddocsnxt',methods=['GET','POST'])
 def Update_next_docs():
-	dtype=request.args.get('dtype')
-	dno=request.args.get('dno')
+	dtype=request.json.get('dtype')
+	dno=request.json.get('dno')
 	#return dtype
 	if request.method=='POST'or 'GET':
 		data=get_document_detailsx(str(dtype),int(dno))
 		return jsonify(data)
 	else:
 		return "NOt available"
+"""
+
+@app.route('/upddocsnxt',methods=['GET','POST'])
+def Update_next_docs():
+	if request.method == 'POST':
+		dtype = request.json.get('dtype')
+		dno = request.json.get('dno')
+		print(dtype,dno)
+		print(True)
+		data = get_document_detailsx(str(dtype), int(dno))
+		print(data)
+		return jsonify(data)
+	else:
+		return "Not available"
+
 
 if __name__=='__main__':
 	create_documents_table()
