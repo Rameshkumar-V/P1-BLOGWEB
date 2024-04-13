@@ -3,64 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Learning resources</title>
-    <link rel="stylesheet" href="/css/learningresource.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/learningresource.css') }}">
-
-
+    <title>Publications</title>
+    <!-- External CSS -->
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='css/publications.css') }}"> -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Internal CSS for additional styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+        .search {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-input {
+            width: 70%;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        #search-btn {
+            padding: 10px 20px;
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        #documentContainer {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        .pdf1 {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .pdf-details {
+            margin-top: 10px;
+        }
+        .pdf-photo img {
+            max-width: 100px;
+            border-radius: 5px;
+        }
+        .name {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .pdf-details h4 {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .pdf-details h4:hover {
+            color: #0056b3;
+        }
+        #loadMoreBtn {
+            background-color: #0056b3;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
     <div class="header">
-      <div class="search"><input type="text" /></div>
+        <h1>Publications</h1>
+        <div class="search">
+            <input type="text" id="search-input" class="search-input" placeholder="Search Publications" />
+            <button id="search-btn">Search</button>
+        </div>
+    </div>
 
-      <button>Search</button>
+    <div id="documentContainer">
+        {% for document in document_details %}
+            <div class="pdf1">
+                <div class="pdf-photo">
+                    <img src="{{ url_for('static', filename='img/publications.png') }}" alt="picture" />
+                </div>
+                <div class="pdf-details">
+                    <h4 class="name">{{ document.document_name }}</h4>
+                    <a href="/getfile/{{ document.document_id }}"><h4><i class="fas fa-download"></i> Download</h4></a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
-    <div class="container"></div>
-    
-    {% if document_details %}
-    {% for document in document_details %}
-    
-          <div class="pdf1">
-        <div class="pdf-photo">
-          <img
-            src=
-            "{{ url_for('static', filename='/img/learnenglish.jpg') }}"
-            alt="image"
-          />
-        </div>
-        <div class="pdf-details">
-          <h4 class="name">{{document.document_name}}</h4>
-          
-        <a href="/getfile/{{document.document_id}}">
-          <h4><i class="fa-solid fa-download"></i>Download</h4></a>
-        </div>
-      </div>
-    
-    
-    {% endfor %}
-    {% else %}
-      <h2>No documents found !</h2>
-      {% endif %}
-    </div>
+
+    <button id="loadMoreBtn">Load More</button>
+
+    <script>
+        // JavaScript code here
+
+        const documentContainer = document.getElementById('documentContainer');
+        const searchInput = document.getElementById('search-input');
+        const searchBtn = document.getElementById('search-btn');
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+
+        // Function for searching publications based on user input
+        const searchPublications = () => {
+            const searchTerm = searchInput.value.toLowerCase(); // Make search case-insensitive
+            const documentElements = documentContainer.querySelectorAll('.pdf1');
+
+            documentElements.forEach(documentElement => {
+                const documentName = documentElement.querySelector('.name').textContent.toLowerCase();
+                if (documentName.includes(searchTerm)) {
+                    documentElement.style.display = 'grid';
+                } else {
+                    documentElement.style.display = 'none';
+                }
+            });
+        };
+
+        // Event listener for search button click
+        searchBtn.addEventListener('click', searchPublications);
+
+        // Function for loading more documents (implementation not provided)
+        const loadMoreDocuments = () => {
+            // Implement logic to fetch more documents from the server using AJAX or Fetch API
+            // Update the documentContainer element as needed
+        };
+
+        // Event listener for load more button click
+        loadMoreBtn.addEventListener('click', loadMoreDocuments);
+    </script>
 </body>
-<script>
-     let messages = document.querySelectorAll('.pdf1')
-    let msg_search = document.querySelector(".search-input");
-    let searchmessage = () => {
-  let value1 = msg_search.value.toLowerCase();
-  messages.forEach((chat) => {
-    let name = chat.querySelector(".name").textContent.toLocaleLowerCase();
-    if (name.indexOf(value1) != -1) {
-      chat.style.display = "grid";
-    } else {
-      chat.style.display = "none";
-    }
-  });
-};
-msg_search.addEventListener("keyup", searchmessage);
-  
-</script>
 </html>

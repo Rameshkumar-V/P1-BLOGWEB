@@ -167,6 +167,8 @@ p {
 .more-profile a{
   text-decoration: none;
   color: white;
+  padding: 10px 25px;
+
 }
 /*resource*/
 .resourcehead {
