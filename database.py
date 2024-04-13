@@ -2,8 +2,10 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 import datetime as dt
 
+
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://rameshkumar@localhost/login'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmproject.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://rameshkumar@localhost/login'
 #app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 

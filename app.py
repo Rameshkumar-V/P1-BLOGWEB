@@ -17,7 +17,8 @@ from flask_login import LoginManager, UserMixin, login_user,login_required,logou
 
 
 app=Flask(__name__,template_folder='template')
-app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://rameshkumar@localhost/login'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmproject.db'
+#app.config['SQLALCHEMY_DATABASE_URI'] ='mysql://rameshkumar@localhost/login'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key='fjhsdkjfhskfhasdkfsh'

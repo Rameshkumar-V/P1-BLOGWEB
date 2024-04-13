@@ -1,0 +1,11 @@
+flask
+sqlalchemy
+mysql
+mysqlclient
+Flask-Login
+Flask-SQLAlchemy
+
+
+
+
+
