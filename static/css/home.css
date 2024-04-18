@@ -143,6 +143,7 @@ p {
 }
 .more {
   display: flex;
+
 }
 .num .num1 {
   margin: 20px;
@@ -385,7 +386,8 @@ p {
     margin: 0;
   }
   .contact {
-    width: 100%;
+    width: 80%;
+    margin: 25px auto;
   }
   .name input,
   .e-mail input {
@@ -394,7 +396,11 @@ p {
     width: 100%;
     background: transparent;
   }
-  .num .more {
-    display: inline;
+  .num .more .num-awards {
+    display: block;
+  }
+  .num{
+    margin: 0;
+    padding: 0;
   }
 }
