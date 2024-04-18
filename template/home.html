@@ -190,21 +190,34 @@
           <p>Send me a message</p>
           <div class="name">
             <i class="fa-solid fa-user"></i>
-            <input type="text" placeholder="Name" />
+            <input type="text" placeholder="Name" id="nameInput"/>
           </div>
           <div class="e-mail">
             <i class="fa-regular fa-envelope"></i>
-            <input type="text" placeholder="E-mail addrress" />
+            <input type="text" placeholder="E-mail addrress" id="emailInput"/>
           </div>
           <div class="text">
             <p>Message</p>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
+            <textarea name="" id="messageInput" cols="30" rows="10"></textarea>
             <br />
           </div>
-          <button>Send</button>
+          <button id="sendButton">Send</button>
         </div>
       </div>
     </div>
-    <script src="/js/home.js"></script>
+    <script>
+      document.getElementById("sendButton").addEventListener("click", function() {
+    // Get input values
+    const name = document.getElementById("nameInput").value;
+    const email = document.getElementById("emailInput").value;
+    const message = document.getElementById("messageInput").value;
+
+    // Construct mailto link with the form data
+    const mailtoLink = `mailto:miracletamizha46@gmail.com?subject=Message from ${encodeURIComponent(name)}&body=${encodeURIComponent(message)}%0A%0AReply to: ${encodeURIComponent(email)}`;
+
+    // Open mail client with pre-filled email
+    window.location.href = mailtoLink;
+});
+    </script>
   </body>
 </html>
