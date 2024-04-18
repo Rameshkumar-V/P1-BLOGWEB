@@ -139,7 +139,7 @@ def login():
     user_id=1
     
     user = User(user_id=1)
-    if username=='tt' and 'tt' == str(userpass):
+    if username=='tamilmanikt1994' and 'tamilmani1234' == str(userpass):
         login_user(user)
         load_user(user)
         # Log in the user
