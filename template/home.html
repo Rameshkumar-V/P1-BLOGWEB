@@ -95,7 +95,7 @@
         <div class="num">
           <div class="more">
             <div class="num1">
-              <h3>30(1994)</h3>
+              <h3><span id="yearNumber">30</span>(1994)</h3>
               <p>experience</p>
             </div>
             <div class="num1">
@@ -212,6 +212,22 @@
       </div>
     </div>
     <script>
+      // Get the span element containing the experience number
+      const experienceNumberElement = document.getElementById("yearNumber");
+
+      // Get the starting year
+      const startYear = 1994;
+
+      // Get the current year
+      const currentYear = new Date().getFullYear();
+      console.log(currentYear);
+
+      // Calculate the difference between the current year and the start year
+      const yearsPassed = currentYear - startYear;
+
+      // Increase the experience number by the number of years passed
+      experienceNumberElement.textContent = yearsPassed;
+
       document
         .getElementById("sendButton")
         .addEventListener("click", function () {
