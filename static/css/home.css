@@ -124,8 +124,8 @@ p {
   align-items: center;
   justify-content: center;
 }
-.abtphoto{
-  height:100%;
+.abtphoto {
+  height: 100%;
 }
 .abtpara {
   width: 50%;
@@ -144,12 +144,10 @@ p {
 .more {
   display: flex;
 }
-.num .num1{
+.num .num1 {
   margin: 20px;
 }
 .num .num1 h3 {
-
-
   color: hsl(250, 69%, 61%, 1);
 }
 .num button {
@@ -164,11 +162,10 @@ p {
   border-radius: 5px;
   cursor: pointer;
 }
-.more-profile a{
+.more-profile a {
   text-decoration: none;
   color: white;
   padding: 10px 25px;
-
 }
 /*resource*/
 .resourcehead {
@@ -209,7 +206,7 @@ p {
   font-size: 0.8rem;
   font-weight: 600;
 }
-.resource1 a{
+.resource1 a {
   text-decoration: none;
   color: white;
 }
@@ -242,7 +239,7 @@ p {
   color: white;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
-.utube-link a{
+.utube-link a {
   text-decoration: none;
   color: white;
 }
@@ -255,12 +252,9 @@ p {
   width: 100%;
   height: 100%;
   display: flex;
-
   align-items: center;
   justify-content: center;
-  padding:20px;
-
-
+  padding: 20px;
 }
 .socialmedia {
   width: 50%;
@@ -289,6 +283,7 @@ p {
 .e-mail input {
   border: none;
   outline: none;
+  width: 100%;
 }
 .text {
   width: 200px;
@@ -319,7 +314,7 @@ p {
   margin-top: 20px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }
-.linkedin-profile a{
+.linkedin-profile a {
   text-decoration: none;
   color: white;
 }
@@ -368,23 +363,27 @@ p {
     width: 70%;
     margin: 0 15%;
   }
-  .professionalact,.englishtips{
+  .professionalact,
+  .englishtips {
     margin-bottom: 25px;
   }
-  .contact1{
-      display:inline;
-
-
-
-
+  .contact1 {
+    display: inline;
   }
-  .msg{
-      width:100%;
-
+  .msg {
+    width: 100%;
   }
-  .msg .name,.e-mail,.text{
-      height:60px;
-      width:100%;
+  .msg .name,
+  .e-mail,
+  .text {
+    height: 60px;
+    width: 100%;
   }
-
+  .socialmedia {
+    padding: 0;
+    margin: 0;
+  }
+  .contact {
+    width: 100%;
+  }
 }
