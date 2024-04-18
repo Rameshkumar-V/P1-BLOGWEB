@@ -143,7 +143,6 @@ p {
 }
 .more {
   display: flex;
-
 }
 .num .num1 {
   margin: 20px;
@@ -386,7 +385,7 @@ p {
     margin: 0;
   }
   .contact {
-    width: 80%;
+    width: 90%;
     margin: 25px auto;
   }
   .name input,
@@ -399,7 +398,7 @@ p {
   .num .more .num-awards {
     display: block;
   }
-  .num{
+  .num {
     margin: 0;
     padding: 0;
   }
