@@ -283,7 +283,7 @@ p {
 .e-mail input {
   border: none;
   outline: none;
-  width: 100%;
+
   background: transparent;
 }
 .text {
@@ -361,8 +361,8 @@ p {
     display: inline;
   }
   .resource1 {
-    width: 70%;
-    margin: 0 15%;
+    width: 80%;
+    margin: 0 auto;
   }
   .professionalact,
   .englishtips {
@@ -386,5 +386,12 @@ p {
   }
   .contact {
     width: 100%;
+  }
+  .name input,
+  .e-mail input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
   }
 }
